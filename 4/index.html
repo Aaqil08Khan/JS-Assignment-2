@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>printSquares</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+        width: 300px;
+      }
+      button {
+        padding: 10px 15px;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      p {
+        font-size: 18px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Enter numbers to print squares of it</h2>
+    <input
+      type="text"
+      id="numbers"
+      placeholder="Enter numbers seperated by commas"
+    />
+    <button id="find">find</button>
+    <p id="result"></p>
+    <script>
+      document
+        .getElementById("find")
+        .addEventListener("click", function printSquares() {
+          let input = document.getElementById("numbers").value.split(",");
+            let results = [];
+          input.forEach(myFunction);
+          function myFunction(num) {
+            let squares = Math.pow(num, 2);
+            results.push(squares);
+            
+          }
+          document.getElementById("result").textContent = results.join(" ");
+        });
+    </script>
+  </body>
+</html>

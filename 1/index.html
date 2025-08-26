@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>isEven</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      input {
+        padding: 10px;
+        font-size: 2rem;
+        width: 26rem;
+      }
+      button {
+        padding: 10px 15px;
+        font-size: 2rem;
+        margin-left: 10px;
+      }
+      p {
+        font-size: 2rem;
+        color: #555;
+      }
+      @media (max-width: 575px) {
+        h2 {
+          font-size: 1rem;
+        }
+        input{
+            width: 14rem;
+            font-size: 1rem;
+        }
+        button{
+            font-size: 1rem;
+            width: 2rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Find Whether a number is Even or Odd</h2>
+    <input type="number" id="numbers" placeholder="Enter a Number" />
+    <button id="find">Find</button>
+    <p id="result"></p>
+    <script>
+      document.getElementById("find").addEventListener(
+        "click",
+        (isEven = () => {
+          let input = document.getElementById("numbers").value;
+          if (input % 2 == 0) {
+            document.getElementById("result").textContent =
+              "The number is Even";
+          } else {
+            document.getElementById("result").textContent = "The number is Odd";
+          }
+        })
+      );
+    </script>
+  </body>
+</html>
